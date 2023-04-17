@@ -1,6 +1,7 @@
 import { fetchCast } from 'components/fetchApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import css from './castStyle.module.css';
 
 const Cast = () => {
   const { id } = useParams();
@@ -23,16 +24,21 @@ const Cast = () => {
 
   return (
     <div>
-      <ul>
-        <div>
+      <ul className={css.listCast}>
+        <div className={css.listBox}>
           {actor.map(el => (
-            <li key={el.id}>
+            <li key={el.id} className={css.card}>
               <img
-                src={`https://image.tmdb.org/t/p/w500/${el.profile_path}`}
+                src={
+                  el.profile_path
+                    ? `https://image.tmdb.org/t/p/w500/${el.profile_path}`
+                    : 'https://placehold.co/200x305'
+                }
                 alt={el.name}
-                width="200"
+                className={css.picture}
               />
-              {el.name}
+              <p className={css.text}>Actor: {el.name}</p>
+              <p className={css.text}>Role: {el.character}</p>
             </li>
           ))}
         </div>

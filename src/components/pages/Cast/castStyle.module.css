@@ -1,0 +1,26 @@
+.listCast {
+  list-style: none;
+}
+
+.listBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card {
+  display: flex;
+  flex-basis: calc((100% - 20px) / 3);
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.picture {
+  width: 200px;
+  height: auto;
+  padding-bottom: 5px;
+}
+
+.text {
+  margin: 5px;
+}

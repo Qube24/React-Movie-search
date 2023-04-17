@@ -1,6 +1,7 @@
 import { fetchReviews } from 'components/fetchApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import css from './reviewsStyle.module.css';
 
 const Reviews = () => {
   const { id } = useParams();
@@ -20,14 +21,14 @@ const Reviews = () => {
   }
 
   return (
-    <div>
+    <ul className={css.reviewList}>
       {review.results.map(el => (
-        <li key={el.id}>
+        <li key={el.id} className={css.reviewCard}>
           {el.author}
-          <p>{el.content}</p>
+          <p className={css.review}>{el.content}</p>
         </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

@@ -1,0 +1,55 @@
+.form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.searchBar {
+  width: 300px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.searchBar:hover,
+:focus {
+  border-color: orangered;
+  border-radius: 4px;
+}
+
+.searchBtn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  height: 46px;
+  width: 100px;
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  background-color: orangered;
+  cursor: pointer;
+}
+
+.listSearch {
+  list-style: none;
+  color: black;
+  margin: 5px;
+  padding: 0;
+}
+
+.listSearch li {
+  margin: 10px;
+}
+
+.listSearch li:hover {
+  color: orangered;
+  font-weight: 700;
+}
+
+.linkSearch {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}

@@ -1,0 +1,27 @@
+.pageTitle {
+  text-align: center;
+  font-size: 35px;
+  margin: 25px;
+}
+
+.list {
+  list-style: none;
+  color: black;
+  margin: 5px;
+  padding: 0;
+}
+
+.list li {
+  margin: 10px;
+}
+
+.list li:hover {
+  color: orangered;
+  font-weight: 700;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+}

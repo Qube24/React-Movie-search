@@ -1,11 +1,13 @@
-import css from '../../style.module.css';
+import css from './movieDetalisStyle.module.css';
 import { details } from 'components/fetchApi';
 import { useEffect, useState, Suspense } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
+import { BackLink } from 'components/BackLink';
 
 const MovieDetails = () => {
   const { id } = useParams();
   const [movies, setMovie] = useState({});
+  const location = useLocation();
 
   useEffect(() => {
     showMovie(id);
@@ -24,24 +26,37 @@ const MovieDetails = () => {
     return 'Loading';
   }
 
+  const backLinkHref = location.state?.from ?? '/movies';
+
   return (
-    <div>
+    <div className={css.container}>
+      <BackLink to={backLinkHref}>
+        <button type="button" className={css.backBtn}>
+          Go Back
+        </button>
+      </BackLink>
       <img
         src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`}
         alt={movies.original_title}
-        width="300"
+        className={css.poster}
       />
-      <div>
+      <div className={css.infoBox}>
         <p className={css.title}>{movies.title}</p>
-        <p className={css.score}>{userScore}%</p>
+        <p className={css.score}>User Score: {userScore}%</p>
         <p className={css.mainText}>Overview</p>
         <p className={css.overview}>{movies.overview}</p>
         <p className={css.mainText}>Genres</p>
         <p className={css.genres}>{genre.map(el => `${el.name} `)}</p>
       </div>
-      <p>Additional information</p>
-      <Link to="cast">Cast</Link>
-      <Link to="reviews">Reviews</Link>
+      <p className={css.infoText}>Additional information</p>
+      <div className={css.linkBox}>
+        <Link to="cast" className={css.linkTo}>
+          Cast
+        </Link>
+        <Link to="reviews" className={css.linkTo}>
+          Reviews
+        </Link>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

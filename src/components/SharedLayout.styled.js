@@ -18,6 +18,7 @@ export const Header = styled.header`
 
   > nav {
     display: flex;
+    gap: 20px;
   }
 `;
 

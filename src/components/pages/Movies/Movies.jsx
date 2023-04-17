@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useSearchParams, Link } from 'react-router-dom';
 import { searchMovies } from 'components/fetchApi';
+import css from './moviesStyle.module.css';
 
 function Movies() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -29,13 +30,20 @@ function Movies() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="searchInput" />
-        <button type="submit">Search</button>
+      <form onSubmit={handleSubmit} className={css.form}>
+        <input
+          type="text"
+          name="searchInput"
+          className={css.searchBar}
+          placeholder="What are you looking for?"
+        />
+        <button type="submit" className={css.searchBtn}>
+          Search
+        </button>
       </form>
-      <ul>
+      <ul className={css.listSearch}>
         {searchMovie.map(el => (
-          <Link to={`/movies/${el.id}`} key={el.id}>
+          <Link to={`/movies/${el.id}`} key={el.id} className={css.linkSearch}>
             <li key={el.id}>{el.title}</li>
           </Link>
         ))}
