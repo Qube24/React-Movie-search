@@ -11,7 +11,6 @@ export const fetchMovies = async () => {
 // fetch search for Movies
 
 export const searchMovies = async value => {
-  console.log(value);
   const res = await fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=b32896ed8f56a3105cdf45e097423bca&language=en-US&page=1&include_adult=false&query=${value}`
   );

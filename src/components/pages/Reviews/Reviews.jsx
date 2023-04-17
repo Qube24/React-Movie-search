@@ -23,7 +23,6 @@ const Reviews = () => {
 
   return (
     <ul className={css.reviewList}>
-      {console.log(review)}
       {review.results.map(el => (
         <li key={el.id} className={css.reviewCard}>
           {el.author}
