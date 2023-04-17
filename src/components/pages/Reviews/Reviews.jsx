@@ -23,10 +23,14 @@ const Reviews = () => {
 
   return (
     <ul className={css.reviewList}>
+      {console.log(review)}
       {review.results.map(el => (
         <li key={el.id} className={css.reviewCard}>
           {el.author}
-          <p className={css.review}>{el.content}</p>
+          <p
+            dangerouslySetInnerHTML={{ __html: el.content }}
+            className={css.review}
+          ></p>
         </li>
       ))}
     </ul>
