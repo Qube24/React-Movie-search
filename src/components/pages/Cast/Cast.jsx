@@ -16,7 +16,9 @@ const Cast = () => {
 
   useEffect(() => {
     showCast(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   if (!actor) {
     return 'Loading';

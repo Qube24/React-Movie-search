@@ -14,6 +14,7 @@ const Reviews = () => {
 
   useEffect(() => {
     showReview(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!review) {
