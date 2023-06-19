@@ -1,8 +1,8 @@
 {
-  "name": "React-Image-finder",
+  "name": "React-Movie-search",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://qube24.github.io/React-Image-finder/",
+  "homepage": "https://qube24.github.io/React-Movie-search/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
