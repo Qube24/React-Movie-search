@@ -1,6 +1,6 @@
 # React-Movie-search
 
-This repository contains a React application for searching movies.
+This repository contains a React application for searching movies. Movie database is provided by TMDB API.
 
 ## Technologies Used
 
